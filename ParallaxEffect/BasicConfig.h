@@ -7,20 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSObject+Clone.h"
 
-@interface BasicConfig : NSObject
+@class BasicConfig;
+
+@protocol BaseConfigDataSource <NSObject>
+
+- (BasicConfig *)customBasicConfig;
+- (BasicConfig *)customBasicConfig1;
++ (BasicConfig *)customBasicConfig2;
+
+@end
+
+
+@interface BasicConfig : NSObject <BaseConfigDataSource>
 
 @property (nonatomic, strong) NSString *appName;
-@property (nonatomic, strong) NSString *appVersion;
+@property (nonatomic, strong, setter=myAppVersion:) NSString *appVersion;
 @property (nonatomic) NSInteger index;
 @property (nonatomic) CGRect rect;
 
-- (instancetype)init;
-
 @end
 
 
-@protocol BaseConfigDataSource <NSObject>
-- (BasicConfig*)customBasicConfig;
-@end
+
+

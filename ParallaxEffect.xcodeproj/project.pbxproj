@@ -28,6 +28,8 @@
 		A490AF3E1ABECFC400F72250 /* ParallaxEffectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A490AF3D1ABECFC400F72250 /* ParallaxEffectTests.m */; };
 		A490AF481ABECFED00F72250 /* holi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A490AF471ABECFED00F72250 /* holi.jpg */; };
 		A490AF4A1ABECFF500F72250 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A490AF491ABECFF500F72250 /* bg.png */; };
+		A4ABB3791C450ECC002FD56F /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ABB3781C450ECC002FD56F /* TableViewController.m */; };
+		A4ABB37C1C450F10002FD56F /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ABB37B1C450F10002FD56F /* CustomTableViewCell.m */; };
 		A4B167901C3A586600403E52 /* ParallaxEffectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B1678F1C3A586600403E52 /* ParallaxEffectUITests.m */; };
 		A4E95A0C1ABEDFB400007ED0 /* HOME.png in Resources */ = {isa = PBXBuildFile; fileRef = A4E95A0B1ABEDFB400007ED0 /* HOME.png */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,10 @@
 		A490AF3D1ABECFC400F72250 /* ParallaxEffectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParallaxEffectTests.m; sourceTree = "<group>"; };
 		A490AF471ABECFED00F72250 /* holi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = holi.jpg; sourceTree = "<group>"; };
 		A490AF491ABECFF500F72250 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		A4ABB3771C450ECC002FD56F /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		A4ABB3781C450ECC002FD56F /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		A4ABB37A1C450F10002FD56F /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		A4ABB37B1C450F10002FD56F /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		A4B1678D1C3A586600403E52 /* ParallaxEffectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParallaxEffectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B1678F1C3A586600403E52 /* ParallaxEffectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParallaxEffectUITests.m; sourceTree = "<group>"; };
 		A4B167911C3A586600403E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 		A490AF181ABECFC400F72250 /* ParallaxEffect */ = {
 			isa = PBXGroup;
 			children = (
+				A4ABB3761C450EB9002FD56F /* Table */,
 				A490AF211ABECFC400F72250 /* AppDelegate.h */,
 				A490AF221ABECFC400F72250 /* AppDelegate.m */,
 				A490AF241ABECFC400F72250 /* Main.storyboard */,
@@ -204,6 +211,17 @@
 				A490AF3A1ABECFC400F72250 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4ABB3761C450EB9002FD56F /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				A4ABB3771C450ECC002FD56F /* TableViewController.h */,
+				A4ABB3781C450ECC002FD56F /* TableViewController.m */,
+				A4ABB37A1C450F10002FD56F /* CustomTableViewCell.h */,
+				A4ABB37B1C450F10002FD56F /* CustomTableViewCell.m */,
+			);
+			name = Table;
 			sourceTree = "<group>";
 		};
 		A4B1678E1C3A586600403E52 /* ParallaxEffectUITests */ = {
@@ -349,9 +367,11 @@
 				A454D8FE1C3D202A0083C8A2 /* GameConfig.m in Sources */,
 				A454D8FB1C3D1F670083C8A2 /* BasicConfig.m in Sources */,
 				A490AF291ABECFC400F72250 /* ViewController.m in Sources */,
+				A4ABB3791C450ECC002FD56F /* TableViewController.m in Sources */,
 				A490AF231ABECFC400F72250 /* AppDelegate.m in Sources */,
 				A490AF1F1ABECFC400F72250 /* main.m in Sources */,
 				A454D9011C3D23950083C8A2 /* AppConfig.m in Sources */,
+				A4ABB37C1C450F10002FD56F /* CustomTableViewCell.m in Sources */,
 				A47E62D31C437F2D00C3BBEE /* NSObject+Clone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

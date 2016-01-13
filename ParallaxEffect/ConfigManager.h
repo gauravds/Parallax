@@ -12,9 +12,11 @@
 
 @interface ConfigManager : NSObject
 
-@property (nonatomic, readonly) BasicConfig *basicConfig;
-@property (nonatomic, readonly) GameConfig *gameConfig;
+@property (nonatomic, readonly) BasicConfig <BaseConfigDataSource>*basicConfig;
+@property (nonatomic, readonly) GameConfig <GameConfigDataSource>*gameConfig;
 
+- (BasicConfig *)basicConfig;
+- (GameConfig *)gameConfig;
 
 + (instancetype)sharedInstance;
 

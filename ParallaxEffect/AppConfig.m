@@ -11,10 +11,11 @@
 @implementation AppConfig
 
 - (BasicConfig *)customBasicConfig {
-//    BasicConfig *basicConfig = [BasicConfig new];
-    self.appName = @"custom app";
-    self.appVersion = nil;//@"custom app version v 1.0";
-    return self;
+    BasicConfig *basicConfig = [BasicConfig new];
+    basicConfig.appName = @"custom app";
+    basicConfig.appVersion = nil;//@"custom app version v 1.0";
+    basicConfig.rect = CGRectNull;
+    return basicConfig;
 }
 
 - (GameConfig*)customGameConfig {

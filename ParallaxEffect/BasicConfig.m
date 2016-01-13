@@ -17,10 +17,14 @@
 }
 
 - (void)setDefault {
-    self.appName = @"App Default";
-    self.appVersion = @"ac v1.0.0";
-    self.index = 0;
-    self.rect = CGRectZero;
+//    self.appName = @"App Default";
+//    self.appVersion = @"ac v1.0.0";
+//    self.index = 0;
+//    self.rect = CGRectZero;
+}
+
+- (BasicConfig *)customBasicConfig {
+    return self;
 }
 
 @end

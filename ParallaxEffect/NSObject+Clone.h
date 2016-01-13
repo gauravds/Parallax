@@ -11,5 +11,13 @@
 @interface NSObject (Clone)
 
 - (instancetype)clone;
+- (void)copyValues:(id)objCopy;
+- (void)setAccessibilityLabelsOnIVARs;
+
++ (NSArray*)getIVARsTillTargetClass:(Class)classNameTarget;
+
+
+- (void)protocolMethodList:(Protocol*)p;
+- (void)protertiesName;
 
 @end

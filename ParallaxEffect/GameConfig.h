@@ -11,8 +11,8 @@
 
 @interface GameConfig : NSObject
 
-@property (nonatomic, strong) NSString *gameName;
-@property (nonatomic, strong) NSString *gameVersion;
+@property (nonatomic, weak) NSString *gameName;
+@property (nonatomic, weak) NSString *gameVersion;
 
 - (instancetype)init;
 

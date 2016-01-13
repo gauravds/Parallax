@@ -58,8 +58,9 @@
     [scrollView setContentInset:UIEdgeInsetsMake(0, 0,1200, 0)];
     
     imgViewFrame = imgView.frame;
-    
-    [[ConfigManager sharedInstance] testConfigProtocol];
+//    for (int i = 0; i < 10000; i++) {
+        [[ConfigManager sharedInstance] testConfigProtocol];
+//    }
 }
 
 - (int)addTwoNumbersA:(int)a intB:(int)b {
