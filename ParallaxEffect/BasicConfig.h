@@ -13,8 +13,6 @@
 @protocol BaseConfigDataSource <NSObject>
 
 - (BasicConfig *)customBasicConfig;
-- (BasicConfig *)customBasicConfig1;
-+ (BasicConfig *)customBasicConfig2;
 
 @end
 
@@ -25,6 +23,8 @@
 @property (nonatomic, strong, setter=myAppVersion:) NSString *appVersion;
 @property (nonatomic) NSInteger index;
 @property (nonatomic) CGRect rect;
+
+- (instancetype)createPrivateClass;
 
 @end
 

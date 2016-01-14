@@ -145,7 +145,7 @@ typedef struct objcasd_class1 *Class12;
         if (setter == NULL) {
             setter = [self setNameFor:property_getName(property)];
         }
-        fprintf(stdout, "%s %s\n", property_getName(property), setter);
+        fprintf(stdout, "%s %s attri: %s\n", property_getName(property), setter, property_getAttributes(property));
     }
 
     

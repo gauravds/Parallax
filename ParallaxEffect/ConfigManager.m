@@ -11,8 +11,8 @@
 
 @interface ConfigManager ()
 
-@property (nonatomic, strong) BasicConfig *basicConfigOrignal, *basicConfigPrivate;
-@property (nonatomic, strong) GameConfig *gameConfigOrignal, *gameConfigPrivate;
+@property (nonatomic, readwrite) BasicConfig *basicConfig;
+@property (nonatomic, readwrite) GameConfig *gameConfig;
 
 @end
 
@@ -31,25 +31,8 @@
     return _sharedInstance;
 }
 
-- (BasicConfig *)basicConfig {
-//    if (!_basicConfigPrivate) {
-//        _basicConfigPrivate = [BasicConfig new];
-//    }
-//    [_basicConfigPrivate copyValues:_basicConfigOrignal];
-    return [_basicConfigOrignal clone];
-}
-
-- (GameConfig *)gameConfig {
-//    if (!_gameConfigPrivate) {
-//        _gameConfigPrivate = [GameConfig new];
-//    }
-//    [_gameConfigPrivate copyValues:_gameConfigOrignal];
-    return [_gameConfigOrignal clone];
-}
-
 #pragma mark - Private Method
 - (void)setAllDataOnce {
-    _basicConfigOrignal = [[BasicConfig alloc] init];
     [self callDataSource];
 }
 
@@ -57,12 +40,12 @@
     AppConfig *appConfig = [AppConfig new];
     if ([appConfig conformsToProtocol:@protocol(BaseConfigDataSource)] &&
         [appConfig respondsToSelector:@selector(customBasicConfig)]) {
-        _basicConfigOrignal = [[appConfig performSelector:@selector(customBasicConfig)] clone];
+        _basicConfig = [[appConfig performSelector:@selector(customBasicConfig)] createPrivateClass];
     }
     
     if ([appConfig conformsToProtocol:@protocol(GameConfigDataSource)] &&
         [appConfig respondsToSelector:@selector(customGameConfig)]) {
-        _gameConfigOrignal = [[appConfig performSelector:@selector(customGameConfig)] clone];
+        _gameConfig = [[appConfig performSelector:@selector(customGameConfig)] clone];
     }
 }
 
@@ -70,17 +53,17 @@
 #pragma mark - Test method 
 #pragma mark --temp -remove-it
 - (void)testConfigProtocol {
-    [self protocolMethodList:@protocol(BaseConfigDataSource)];
-    [_basicConfigOrignal protertiesName];
+//    [self protocolMethodList:@protocol(BaseConfigDataSource)];
+//    [_basicConfigOrignal protertiesName];
     NSLog(@"----");
-//    [ConfigManager sharedInstance].basicConfig.appName = @"test name";
+    [ConfigManager sharedInstance].basicConfig.appName = @"test name";
 //    [ConfigManager sharedInstance].gameConfig.gameName = @"test game name";
     NSLog(@"%@",[ConfigManager sharedInstance].basicConfig.appName);
-//    NSLog(@"%@", [ConfigManager sharedInstance].basicConfig.appVersion);
-//    NSLog(@"%d", [ConfigManager sharedInstance].basicConfig.index);
-//    NSLog(@"%@", NSStringFromCGRect([ConfigManager sharedInstance].basicConfig.rect));
-//    NSLog(@"%@", [ConfigManager sharedInstance].gameConfig.gameName);
-//    NSLog(@"%@", [ConfigManager sharedInstance].gameConfig.gameVersion);
+    NSLog(@"%@", [ConfigManager sharedInstance].basicConfig.appVersion);
+    NSLog(@"%d", [ConfigManager sharedInstance].basicConfig.index);
+    NSLog(@"%@", NSStringFromCGRect([ConfigManager sharedInstance].basicConfig.rect));
+    NSLog(@"%@", [ConfigManager sharedInstance].gameConfig.gameName);
+    NSLog(@"%@", [ConfigManager sharedInstance].gameConfig.gameVersion);
 }
 
 @end

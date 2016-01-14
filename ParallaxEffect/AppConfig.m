@@ -13,8 +13,6 @@
 - (BasicConfig *)customBasicConfig {
     BasicConfig *basicConfig = [BasicConfig new];
     basicConfig.appName = @"custom app";
-    basicConfig.appVersion = nil;//@"custom app version v 1.0";
-    basicConfig.rect = CGRectNull;
     return basicConfig;
 }
 
