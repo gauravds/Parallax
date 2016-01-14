@@ -8,7 +8,11 @@
 
 #import "BasicConfig.h"
 #import "GameConfig.h"
+#import "ConfigManager.h"
 
 @interface AppConfig : NSObject <BaseConfigDataSource, GameConfigDataSource>
+
+@property (nonatomic, strong) NSString *appName;
+- (void)hack;
 
 @end

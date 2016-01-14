@@ -17,7 +17,4 @@
 
 + (instancetype)sharedInstance;
 
-//-- temp testing method
-- (void)testConfigProtocol;
-
 @end

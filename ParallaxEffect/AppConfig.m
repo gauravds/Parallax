@@ -7,6 +7,7 @@
 //
 
 #import "AppConfig.h"
+#import <objc/runtime.h>
 
 @implementation AppConfig
 
@@ -22,5 +23,16 @@
     gameConfig.gameVersion = @"custom ve 2.0";
     return gameConfig;
 }
+
+
+- (void)hack {
+    Class className = [[ConfigManager sharedInstance].basicConfig class];
+    SEL setterName = @selector(setAppName:);
+    Method m2 = class_getInstanceMethod(className, setterName);
+    IMP imp2 = method_getImplementation(m2);
+    class_addMethod(className, setterName, (IMP)imp2, "v@:@");
+    objc_registerClassPair(className);
+}
+
 
 @end

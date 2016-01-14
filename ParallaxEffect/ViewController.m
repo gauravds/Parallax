@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ConfigManager.h"
+#import "AppConfig.h"
 
 @interface ViewController ()<UIScrollViewDelegate> {
     IBOutlet UIImageView *imgView;
@@ -58,9 +59,28 @@
     [scrollView setContentInset:UIEdgeInsetsMake(0, 0,1200, 0)];
     
     imgViewFrame = imgView.frame;
-//    for (int i = 0; i < 10000; i++) {
-        [[ConfigManager sharedInstance] testConfigProtocol];
-//    }
+    for (int i = 0; i < 10000; i++) {
+        //    [self protocolMethodList:@protocol(BaseConfigDataSource)];
+        //    [_basicConfigOrignal protertiesName];
+        NSLog(@"----");
+        [ConfigManager sharedInstance].basicConfig.appName = @"test name";
+        NSLog(@"%@",[ConfigManager sharedInstance].basicConfig.appName);
+        NSLog(@"----hack");
+        
+        AppConfig *appConfig = [AppConfig new];
+        [appConfig hack];
+        [ConfigManager sharedInstance].basicConfig.appName = @"test name";
+        NSLog(@"%@",[ConfigManager sharedInstance].basicConfig.appName);
+        
+        
+        //    [ConfigManager sharedInstance].gameConfig.gameName = @"test game name";
+        NSLog(@"%@",[ConfigManager sharedInstance].basicConfig.appName);
+        NSLog(@"%@", [ConfigManager sharedInstance].basicConfig.appVersion);
+        NSLog(@"%d", [ConfigManager sharedInstance].basicConfig.index);
+        NSLog(@"%@", NSStringFromCGRect([ConfigManager sharedInstance].basicConfig.rect));
+        NSLog(@"%@", [ConfigManager sharedInstance].gameConfig.gameName);
+        NSLog(@"%@", [ConfigManager sharedInstance].gameConfig.gameVersion);
+    }
 }
 
 - (int)addTwoNumbersA:(int)a intB:(int)b {
